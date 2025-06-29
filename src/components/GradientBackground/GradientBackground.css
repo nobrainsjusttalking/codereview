@@ -1,0 +1,59 @@
+.gradients {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  gap: 0px;
+  justify-content: space-between;
+  overflow: hidden;
+
+
+  --yellow: #EEB902;
+  --pink: #E25377;
+  --blue: #62B4FF;
+  --peach: #F28FD2;
+}
+
+.radial-gradient {
+  width: 20%;
+  height: 250px;
+  margin: 0 auto; /* Центрирование */
+  border-radius: 30%;;
+  filter:blur(160px);
+}
+
+
+.radial-gradient_yellow {
+  /* po
+  left: 120px;
+  top: 120px; */
+  background-image: radial-gradient(var(--yellow));
+  /* animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite; 
+  animation-name: gradient-movement; */
+
+  animation: 4s ease-in-out 0s infinite gradient-movement alternate;
+}
+
+@keyframes gradient-movement {
+  0% {
+    transfrom: translateX(-100px) translateY(100px);
+  }
+  100% {
+    transform: translateX(400px) translateY(-100px);
+  }
+}
+
+.radial-gradient_peach {
+  background-image: radial-gradient(var(--peach));
+  animation: 4s ease-in-out 0s infinite gradient-movement alternate-reverse;
+}
+.radial-gradient_blue {
+  background-image: radial-gradient(var(--blue));
+  animation: 4s ease-in-out 0s infinite gradient-movement alternate;
+}
+.radial-gradient_pink {
+  background-image: radial-gradient(var(--pink));
+  animation: 4s ease-in-out 0s infinite gradient-movement alternate-reverse;
+}

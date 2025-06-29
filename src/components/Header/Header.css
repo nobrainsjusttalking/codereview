@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.top-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 14px;
+  padding: 14px 20px; /* mobile-desktop changes */
+  background-color: white;
+  border-radius: 18px;
+}
+
+.logo__text {
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -1px;
+
+  background-image: linear-gradient(to right, #2093FE, #C217FEE5);
+  color: transparent;
+  background-clip: text;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+/* .logo__text--lowered {
+  position: rel;
+} */
+
+.logo__text::before {
+  content: "<";
+}
+.logo__text::after {
+  content: "/>";
+}
+.logo__text--thin {
+  font-weight: 400;
+}
+ 
+.btn {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  border: 1px solid transparent;
+  font-family: "Wix Madefor Text", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background: transparent;
+}
+.btn:hover {
+  border-color: #646cff;
+}
+
+@media (width >= 640px) {
+  .hide-mobile {
+    display: revert;
+  }
+}

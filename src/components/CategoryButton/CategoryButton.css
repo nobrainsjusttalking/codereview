@@ -1,0 +1,22 @@
+.category-btn {
+  font-family: "Wix Madefor Text", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  color: #232325;
+  background-color: #F6F6F6;
+  border-radius: 12px;
+  padding: 5px 15px;
+  border: none;
+}
+
+.category-btn:hover {
+  background-color: #F4F4F4;
+}
+
+.active {
+  background: linear-gradient(to right, #2093FE, #C217FEE5);
+  background-color: transparent;
+  color: #FFFFFF;
+}

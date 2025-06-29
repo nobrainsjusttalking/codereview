@@ -1,0 +1,19 @@
+.main {
+  padding-inline: 15px;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.title-block-heading {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.title-block-text {
+  font-size: "Wix Madefor Display", sans-serif;
+}

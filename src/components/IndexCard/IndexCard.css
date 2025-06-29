@@ -1,0 +1,97 @@
+.index-card {
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 6px;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+.index-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/IndexCard/background-category.svg');
+  background-size: cover;
+  opacity: 0;
+  border-radius: inherit;
+}
+.index-card:hover::before {
+  animation: bgMove .3s ease-in-out normal forwards;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: -20px 20px;
+    opacity: 0;
+  }
+  80% {
+    background-position: 10px -10px;
+    opacity: 0.8;
+  }
+  100% {
+    background-position: 0% 0;
+    opacity: 1;
+  }
+}
+
+.index-card:hover .index-card-data {
+  transform: translateY(5px);
+}
+.index-card:hover .index-card-text {
+  opacity: 1;
+}
+
+/* Плавное проявление фона */
+/* .index-card:hover::before {
+  background-position: 0% 0;
+  opacity: 1;
+} */
+
+
+.index-card-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  transition: transform .2s ease-in;
+}
+
+.index-card-text {
+  font-family: "Wix Madefor Text", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px; 
+  letter-spacing: -0.5px;
+  opacity: 0;
+  color: #232325;
+}
+
+
+.index-card-heading {
+  font-family: "Wix Madefor Text", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: #232325;
+}
+
+img {
+  font-size: initial;
+  width: initial;
+}
+
+.card-light-gradient {
+  background: linear-gradient(to right, #F4B8B866, #E3EAB366, #C5F1D066);
+}
+
+.card-purplish-gradient {
+  background: linear-gradient(to right, #F4B8B866, #E3B3EA66, #C5C9F166);
+}
