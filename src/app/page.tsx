@@ -37,7 +37,7 @@ export default function Page() {
         {
           indexCardData.map(({ href, heading, image, imgWidth, imgHeight, text, additionalClass = ''}, idx) => {
             return (
-              <IndexCard href={href} key={`${heading}-${idx}`} additionalClass={additionalClass + ' ' + (href = '#') ? 'index-card-in-dev' : ''}>
+              <IndexCard href={href} key={`${heading}-${idx}`} additionalClass={additionalClass + ' ' + (href == '#') ? 'index-card-in-dev' : ''}>
                 <div className='index-card-data'>
                   <Image src={image} alt='' aria-hidden='true' width={imgWidth} height={imgHeight} />
 
