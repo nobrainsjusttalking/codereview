@@ -1,5 +1,4 @@
 import Footer from '@/components/Footer/Footer';
-import GradientBackground from '@/components/GradientBackground/GradientBackground';
 import Header from '@/components/Header/Header';
 import type { Metadata } from 'next';
 import React from 'react';
@@ -20,7 +19,6 @@ export default function RootLayout({
     <html lang='en' className={`${displayFont.variable} ${textFont.variable}`}>
       <body className='font-display text-base'>
         <Header />
-        <GradientBackground />
         {children}
         <Footer />
       </body>

@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <main className='main'>
       <div className='title-block'>
-        <Image src='/assistant.png' alt='' width={96.1} height={99}/>
+        <Image src='/assistant-real.png' alt='' width={96.1} height={99}/>
 
         <PageHeading className='title-block__page-heading'>Твой Ассистент по поиску работы</PageHeading>
 
@@ -35,8 +35,18 @@ export default function Page() {
 
       <div className='index-cards'>
         {
-          indexCardData.map(({ href, heading, image, text, additionalClass = ''}, idx) => {
-            return <IndexCard href={href} key={`${heading}-${idx}`} image={image} text={text} width={19.5} height={18.42} additionalClass={additionalClass}>{heading}</IndexCard>;
+          indexCardData.map(({ href, heading, image, imgWidth, imgHeight, text, additionalClass = ''}, idx) => {
+            return (
+              <IndexCard href={href} key={`${heading}-${idx}`} image={image} text={text} width={imgWidth} height={imgHeight} additionalClass={additionalClass}>
+                <div className='index-card-data'>
+                  <Image src={image} alt='' aria-hidden='true' width={imgWidth} height={imgHeight} />
+
+                  <p className='index-card-text hide-mobile'>{text}</p>
+                </div>
+
+                <h2 className='index-card-heading'>{heading}</h2>
+              </IndexCard>
+            );
           })
         }
       </div>

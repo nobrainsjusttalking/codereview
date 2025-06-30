@@ -1,11 +1,11 @@
 .gradients {
   position: absolute;
   inset: 0;
+  z-index: -1;
   display: flex;
   gap: 0px;
   justify-content: space-between;
   overflow: hidden;
-
 
   --yellow: #EEB902;
   --pink: #E25377;

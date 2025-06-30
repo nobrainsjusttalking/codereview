@@ -17,3 +17,10 @@
 .title-block-text {
   font-size: "Wix Madefor Display", sans-serif;
 }
+
+
+.test1 {
+  width: 100%;
+  height: 400px;
+  background-color: lightcoral;
+}

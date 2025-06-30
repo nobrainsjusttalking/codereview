@@ -48,11 +48,42 @@
   opacity: 1;
 }
 
-/* Плавное проявление фона */
-/* .index-card:hover::before {
-  background-position: 0% 0;
+
+
+/* In Development */
+.index-card[href='#']::before {
+  content: '';
+  background-image: url('/IndexCard/in_dev_purple.svg'), url('/IndexCard/in_dev_black.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%, 50% 75%;
+  background-size: 100% auto;
   opacity: 1;
-} */
+  border-radius: inherit;
+  animation: none;
+  transition: top .2s ease-in;
+}
+.index-card[href='#'] .index-card-text {
+  display: none;
+}
+.index-card[href='#']:hover::before {
+  top: 5px;
+  
+  animation: shaking 1s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes shaking {
+  0% {
+    transform: translateX(-1px) translateY(0px);
+  }
+  100% {
+    transform: translateX(1px) translateY(5px);
+  }
+}
+
+
+
+
+
 
 
 .index-card-data {
@@ -94,4 +125,9 @@ img {
 
 .card-purplish-gradient {
   background: linear-gradient(to right, #F4B8B866, #E3B3EA66, #C5C9F166);
+}
+
+
+.index-card-big {
+  
 }
