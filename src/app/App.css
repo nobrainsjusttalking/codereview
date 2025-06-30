@@ -73,8 +73,11 @@
   background-image: url('/IndexCard/in_dev_purple.svg'), url('/IndexCard/in_dev_black.svg');
   background-repeat: no-repeat;
 
-  background-position: 50% 40%, 50% 50%;
-  background-size: 100% 30%, 100% 30%;
+  background-position: 50% 50%, 50% 60%;
+  background-size: 100% 50%, 100% 40%;
+
+  
+  
 
   /* background-position: 50% 50%, 50% 75%; */
   /* background-position: 50% 30%, 50% 55%; */
