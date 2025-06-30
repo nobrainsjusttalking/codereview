@@ -64,9 +64,3 @@
 .top-menu-btn:hover {
   border-color: #646cff;
 }
-
-@media (width >= 640px) {
-  .hide-mobile {
-    display: revert;
-  }
-}
