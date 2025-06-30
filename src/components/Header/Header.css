@@ -48,7 +48,7 @@
   font-weight: 400;
 }
  
-.btn {
+.top-menu-btn {
   display: flex;
   gap: 6px;
   align-items: center;
@@ -59,8 +59,9 @@
   cursor: pointer;
   transition: border-color 0.25s;
   background: transparent;
+  border: none;
 }
-.btn:hover {
+.top-menu-btn:hover {
   border-color: #646cff;
 }
 

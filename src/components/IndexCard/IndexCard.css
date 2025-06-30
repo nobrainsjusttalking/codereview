@@ -15,7 +15,7 @@
 .index-card::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -10px;
   z-index: -1;
   background-image: url('/IndexCard/background-category.svg');
   background-size: cover;
@@ -46,38 +46,6 @@
 }
 .index-card:hover .index-card-text {
   opacity: 1;
-}
-
-
-
-/* In Development */
-.index-card[href='#']::before {
-  content: '';
-  background-image: url('/IndexCard/in_dev_purple.svg'), url('/IndexCard/in_dev_black.svg');
-  background-repeat: no-repeat;
-  background-position: 50% 50%, 50% 75%;
-  background-size: 100% auto;
-  opacity: 1;
-  border-radius: inherit;
-  animation: none;
-  transition: top .2s ease-in;
-}
-.index-card[href='#'] .index-card-text {
-  display: none;
-}
-.index-card[href='#']:hover::before {
-  top: 5px;
-  
-  animation: shaking 1s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes shaking {
-  0% {
-    transform: translateX(-1px) translateY(0px);
-  }
-  100% {
-    transform: translateX(1px) translateY(5px);
-  }
 }
 
 
@@ -114,20 +82,10 @@
   color: #232325;
 }
 
-img {
-  font-size: initial;
-  width: initial;
-}
-
 .card-light-gradient {
   background: linear-gradient(to right, #F4B8B866, #E3EAB366, #C5F1D066);
 }
 
 .card-purplish-gradient {
   background: linear-gradient(to right, #F4B8B866, #E3B3EA66, #C5C9F166);
-}
-
-
-.index-card-big {
-  
 }

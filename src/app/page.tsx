@@ -37,7 +37,7 @@ export default function Page() {
         {
           indexCardData.map(({ href, heading, image, imgWidth, imgHeight, text, additionalClass = ''}, idx) => {
             return (
-              <IndexCard href={href} key={`${heading}-${idx}`} image={image} text={text} width={imgWidth} height={imgHeight} additionalClass={additionalClass}>
+              <IndexCard href={href} key={`${heading}-${idx}`} additionalClass={additionalClass + ' ' + (href = '#') ? 'index-card-in-dev' : ''}>
                 <div className='index-card-data'>
                   <Image src={image} alt='' aria-hidden='true' width={imgWidth} height={imgHeight} />
 
@@ -49,6 +49,22 @@ export default function Page() {
             );
           })
         }
+        
+        <IndexCard href='#' additionalClass='index-card-big'>
+          <div className='index-card-data'>
+            <Image src='/IndexCard/photo-cont.png' alt='' aria-hidden='true' width={115} height={40} />
+          </div>
+
+          <h2 className='index-card-heading'>База резюме соискателей. Свяжитесь с понравившемся кандидатами напрямую</h2>
+        </IndexCard>
+
+        <IndexCard href='#' additionalClass='index-card-accented'>
+          <div className='index-card-data'>
+            <Image src='/IndexCard/free.svg' alt='' aria-hidden='true' width={79} height={23} />
+          </div>
+
+          <h2 className='index-card-heading'>Разместить вакансию</h2>
+        </IndexCard>
       </div>
     </main>
   );
