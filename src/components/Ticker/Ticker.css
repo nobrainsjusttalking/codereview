@@ -4,6 +4,7 @@
   overflow: hidden;
   width: 100%;
   background-image: linear-gradient(to right, #F4B8B8, #EAD6B5, #E3EAB3, #C5F1D0);
+  user-select: none;
 }
 
 .ticker-track {

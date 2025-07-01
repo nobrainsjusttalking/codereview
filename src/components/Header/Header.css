@@ -11,10 +11,10 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 14px 20px; /* mobile-desktop changes */
+  padding: 14px 20px;
   background-color: #FFFFFFEB;
   border-radius: 18px;
-  box-shadow: 0px 0px 12px 0px #182CC20D;
+  box-shadow: 0px 0px 12px 0px #182CC20D; 
   backdrop-filter: blur(8px);
 }
 
@@ -54,8 +54,8 @@
   align-items: center;
   border: 1px solid transparent;
   font-family: "Wix Madefor Text", sans-serif;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 20px;
   cursor: pointer;
   transition: border-color 0.25s;
   background: transparent;
@@ -63,4 +63,20 @@
 }
 .top-menu-btn:hover {
   border-color: #646cff;
+}
+
+
+
+@media (width >= 768px ) {
+  .header .hide-mobile {
+    display: revert;
+  } 
+}
+
+@media (width >= 1024px) {
+   .top-menu-btn {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 17px 20px;
+   }
 }
