@@ -74,9 +74,8 @@
 }
 
 @media (width >= 1024px) {
-   .top-menu-btn {
+  .top-menu-btn {
     font-size: 18px;
     line-height: 22px;
-    padding: 17px 20px;
-   }
+  }
 }

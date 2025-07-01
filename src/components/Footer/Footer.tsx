@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-// import GradientBackground from '../GradientBackground/GradientBackground';
 import Ticker from '../Ticker/Ticker';
 import './Footer.css';
 
@@ -21,24 +20,26 @@ function Footer() {
             </address>
           </div>
 
-          <nav className='nav'>
-            <Link href='./' className='nav__link'>Программа и тестирование</Link>
-            <Link href='./' className='nav__link'>Тарифы</Link>
-            <Link href='./' className='nav__link'>Команда</Link>
-            <Link href='./' className='nav__link'>О нас</Link>
-            <Link href='./' className='nav__link'>Блог</Link>
-            <Link href='./' className='nav__link'>Вакансии</Link>
-            <Link href='./' className='nav__link'>Запись</Link>
-            <Link href='./' className='nav__link'>Отзывы</Link>
-            <Link href='./' className='nav__link'>Вопросы и ответы</Link>
-          </nav>
+          <div className='footer-nav-wrapper'>
+            <nav className='nav'>
+              <Link href='./' className='nav__link'>Программа и тестирование</Link>
+              <Link href='./' className='nav__link'>Тарифы</Link>
+              <Link href='./' className='nav__link'>Команда</Link>
+              <Link href='./' className='nav__link'>О нас</Link>
+              <Link href='./' className='nav__link'>Блог</Link>
+              <Link href='./' className='nav__link'>Вакансии</Link>
+              <Link href='./' className='nav__link'>Запись</Link>
+              <Link href='./' className='nav__link'>Отзывы</Link>
+              <Link href='./' className='nav__link'>Вопросы и ответы</Link>
+            </nav>
 
-          <button className='test-button'>
-            <span className='test-button__title'>На какую зарплату я могу претендовать?</span>
+            <button className='test-button'>
+              <p className='test-button__title'>На какую зарплату я могу претендовать?</p>
 
-            <span className='test-button__text'>Пройти тест</span>
-          </button>
-        </div> 
+              <p className='test-button__text'>Пройти тест</p>
+            </button>
+          </div>
+        </div>
 
 
         <div className='footer-bottom'>

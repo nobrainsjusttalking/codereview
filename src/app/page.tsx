@@ -52,7 +52,7 @@ export default function Page() {
         
         <IndexCard href='#' additionalClass='index-card-big'>
           <div className='index-card-data'>
-            <Image src='/IndexCard/photo-cont.png' alt='' aria-hidden='true' width={115} height={40} />
+            <Image src='/IndexCard/photo-cont.svg' alt='' aria-hidden='true' width={115} height={40} />
           </div>
 
           <h2 className='index-card-heading'>База резюме соискателей. Свяжитесь с понравившемся кандидатами напрямую</h2>
