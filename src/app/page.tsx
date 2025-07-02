@@ -2,7 +2,6 @@
 import CategoryButton from '@/components/CategoryButton/CategoryButton';
 import IndexCard from '@/components/IndexCard/IndexCard';
 import { indexCardData } from '@/components/IndexCard/IndexCardData';
-import PageHeading from '@/components/PageHeading/PageHeading';
 import Image from 'next/image';
 import { useState } from 'react';
 import './App.css';
@@ -17,7 +16,7 @@ export default function Page() {
       <div className='title-block'>
         <Image src='/assistant-real.png' alt='' width={96.1} height={99}/>
 
-        <PageHeading className='title-block__page-heading'>Твой Ассистент по поиску работы</PageHeading>
+        <h1 className='page-heading title-block__page-heading'>Твой Ассистент по поиску работы</h1>
 
         <p className='title-block__text'>Я собрала для тебя все в одном месте, чтобы ты смог быстро найти работу</p>
       </div>

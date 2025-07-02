@@ -16,22 +16,14 @@
 .radial-gradient {
   width: 20%;
   height: 250px;
-  margin: 0 auto; /* Центрирование */
+  margin: 0 auto;
   border-radius: 30%;;
   filter:blur(160px);
 }
 
 
 .radial-gradient_yellow {
-  /* po
-  left: 120px;
-  top: 120px; */
   background-image: radial-gradient(var(--yellow));
-  /* animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-delay: 0s;
-  animation-iteration-count: infinite; 
-  animation-name: gradient-movement; */
 
   animation: 4s ease-in-out 0s infinite gradient-movement alternate;
 }

@@ -1,30 +1,29 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  poweredByHeader: false,
+  
+  productionBrowserSourceMaps: false,
+  compress: true,
+  
+  async headers() {
+    return [
+      {
+        source: '/api/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store, max-age=0',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          }
+        ],
+      },
+    ];
+  }
 };
 
 export default nextConfig;
-
-// import type { NextConfig } from "next";
-
-// const nextConfig: NextConfig = {
-//   output: 'export', // Статическая сборка (обязательно для GitHub Pages)
-
-//   images: {
-//     unoptimized: true, // Отключает оптимизацию next/image (иначе не будет работать без сервера)
-//   },
-
-//   basePath: process.env.PAGES_BASE_PATH,
-//   trailingSlash: true, // Чтобы ссылки работали на GitHub Pages
-
-//   eslint: {
-//     ignoreDuringBuilds: true,
-//   },
-
-//   typescript: {
-//     ignoreBuildErrors: true,
-//   },
-// };
-
-// export default nextConfig;

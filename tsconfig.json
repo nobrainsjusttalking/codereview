@@ -28,7 +28,9 @@
   },
   "include": [
     "src",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "jest.config.ts", 
+    "jest.setup.ts"
   ],
   "exclude": [
     "node_modules"

@@ -9,7 +9,7 @@
 
 .ticker-track {
   display: flex;
-  animation: ticker-scroll 70s linear infinite;
+  animation: ticker-scroll 130s linear infinite;
 }
 .ticker-track:hover {
   animation-play-state: paused;
