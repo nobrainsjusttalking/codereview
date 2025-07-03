@@ -26,9 +26,6 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  flex-wrap: wrap; /* не помешает явно */
-    min-height: min-content; /* попробовать заставить учитывать высоту */
-
 }
 
 
@@ -93,9 +90,6 @@
   gap: 12px;
 }
 
-@media (width >= 1024px) {
-
-}
 .nav__link {
   max-width: 160px;
   font-family: "Wix Madefor Text", sans-serif;
@@ -207,17 +201,6 @@
   text-align: center;
 }
 
-
-
-/* .footer-main {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-bottom {
-
-} */
-
 @media (width > 480px) {
   .footer-logo {
     font-size: 22px;
@@ -235,7 +218,6 @@
 
 
   .nav__link {
-    /* max-width: 160px; */
     font-size: 16px;
     line-height: 19px;
   }
@@ -244,6 +226,11 @@
     font-size: 15px;
     line-height: 18px;
   }
+
+  /* .footer-main {
+    display: flex;
+  } */
+
 }
 
 
@@ -298,6 +285,44 @@
   }
   .footer-bottom__legal-text {
     text-align: left;
+  }
+
+
+
+
+
+
+
+
+
+  .footer-nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: flex-start;
+  }
+  .test-button {
+    background-color: #232325;
+    gap: 50px;
+    box-sizing: border-box;
+    max-width: 300px;
+    align-items: flex-start;
+  }
+
+  .test-button__title {
+    max-width: 130px;
+    text-align: left;
+  }
+
+  .footer-main {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-block: 40px;
+  }
+  .footer-title-card {
+    order: 2;
+    text-align: right;
   }
 }
 
