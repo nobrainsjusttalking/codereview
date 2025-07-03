@@ -1,7 +1,7 @@
 'use client';
 import VacanciesCard from '@/components/VacanciesCard/VacanciesCard';
 import { useEffect, useState } from 'react';
-import './page.css';
+import styles from './page.module.css';
 
 export default function JobPage() {
   type Vacancy = {
@@ -43,18 +43,17 @@ export default function JobPage() {
  
 
   return (
-    <main className='main'>
-      <div className='title-block'>
-        <h1 className='page-heading title-block-heading'>Вакансии по Data Science (data fetching)</h1>
+    <main className={styles.main}>
+      <div className={styles['title-block']}>
+        <h1 className={styles['title-block-heading']}>Вакансии по Data Science</h1>
 
-        <p className='title-block-text'>
+        <p className={styles['title-block-text']}>
           На этой странице агрегируются junior-вакансии и стажировки из различных источников: 
           hh.ru, Habr Career, LinkedIn, Telegram-каналы и многие другие
         </p>
       </div>
 
-
-      <div className='vacancies'> 
+      <div className={styles.vacancies}> 
         {
           vacanciesData.map((item, idx) => {
             return (
@@ -68,6 +67,8 @@ export default function JobPage() {
         }
       </div>
 
+
+      {/* <Image src='/apiError.png' alt='api error screenshot' className='mb-[100px]' width={500} height={200} /> :P */}
     </main>
   );
 }

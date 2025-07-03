@@ -1,9 +1,11 @@
 .main {
-  padding-inline: 10%;
+  padding-inline: 5%;
   display: flex;
   flex-direction: column;
-  align-items: center;;
+  align-items: flex-start;
+  position: relative;
 }
+
 .main::before {
   content: '';
   position: absolute;
@@ -21,8 +23,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 176px;
-  margin-bottom: 50px;
+  margin-top: 110px;
+  margin-bottom: 30px;
   align-items: flex-start;
 }
 
@@ -61,6 +63,10 @@
 
 
 @media (width > 480px) {
+  .main {
+    padding-inline: 10%;
+  }
+
   .title-block {
     gap: 12px;
   }
@@ -82,6 +88,9 @@
 }
 
 @media (width >= 768px ) {
+  .main {
+    padding-inline: 15%;
+  }
   .title-block {
     gap: 15px;
   }
@@ -125,6 +134,7 @@
 @media (width >= 1280px) {
   .title-block {
     gap: 20px;
+    max-width: 85%;
   }
   .title-block-heading {
     font-size: 50px;

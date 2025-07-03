@@ -14,12 +14,12 @@ export default function Page() {
 
   return (
     <main className='main'>
-      <div className='title-block'>
+      <div className='main-title-block'>
         <Image src='/assistant-real.png' alt='' width={96.1} height={99}/>
 
-        <h1 className='page-heading title-block__page-heading'>Твой Ассистент по поиску работы</h1>
+        <h1 className='page-heading'>Твой Ассистент <br />по поиску работы</h1>
 
-        <p className='title-block__text'>Я собрала для тебя все в одном месте, чтобы ты смог быстро найти работу</p>
+        <p className='main-title-block-text'>Я собрала для тебя все в одном месте, чтобы ты смог быстро найти работу</p>
       </div>
       
       <div className='categories'>

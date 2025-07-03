@@ -21,27 +21,22 @@
   z-index: -10;
 }
 
-.title-block {
+.main-title-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  max-width: 270px;
   margin-top: 90px;
   margin-bottom: 30px;
   text-align: center;
 }
-
-.title-block__page-heading {
-  max-width: 220px;
-}
-
-.title-block__text {
+.main-title-block-text {
   font-family: "Wix Madefor Display", sans-serif;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: -0.5px;
   color: #414246;
+  max-width: 80%;
 }
 
 
@@ -166,16 +161,8 @@
     grid-template-columns: repeat(2, 1fr);;
     grid-template-rows: repeat(4, 150px) 127px;
   }
-
-  .title-block {
-    max-width: 290px;
-  }
-
-  .title-block__page-heading {
-    max-width: 280px;
-  }
-
-  .title-block__text {
+  
+  .main-title-block-text {
     font-size: 19px;
     line-height: 23px;
   }
@@ -203,15 +190,7 @@
    .hide-mobile {
     display: revert;
   }
-
-  .title-block {
-    max-width: 400px;
-  }
-  .title-block__page-heading {
-    max-width: 330px;
-  }
-  
-  .title-block__text {
+  .main-title-block-text {
     font-size: 20px;
     line-height: 24px;
   }
@@ -248,14 +227,12 @@
 }
 
 @media (width >= 1024px) {
-  .title-block__page-heading {
-    max-width: 390px;
-  }
 
 
-  .title-block__text {
+  .main-title-block-text {
     font-size: 21px;
     line-height: 25px;
+    max-width: 60%;
   }
 
   .index-cards {
@@ -297,15 +274,7 @@
     padding-block: 100px;
   }
 
-  .title-block {
-    max-width: 450px;
-  }
-
-  .title-block__page-heading {
-    max-width: 440px;
-  }
-
-  .title-block__text {
+  .main-title-block-text {
     font-size: 22px;
     line-height: 26px;
   }

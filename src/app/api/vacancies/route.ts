@@ -29,21 +29,5 @@ export async function GET() {
     total: number;
   } = vacanciesMockupData;
 
-  console.log(NextResponse.json(vacanciesData));
-  return NextResponse.json(vacanciesMockupData);
-
-  // try {
-  //   const res = await fetch('http://jobs.yourcodereview.com:8005/vacancies/', {
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     }
-  //   });
-  //   const data = await res.json();
-
-  //   return NextResponse.json(data);
-  // } catch (error) {
-  //   console.log(error);
-  
-  //   return NextResponse.json({ error: 'API REQUEST ERROR!!!' }, { status: 422 });
-  // }
+  return NextResponse.json(vacanciesData);
 }
