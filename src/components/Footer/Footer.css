@@ -19,13 +19,16 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  z-index: -1000;
+  z-index: -1;
 }
 
 .footer-main {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  flex-wrap: wrap; /* не помешает явно */
+    min-height: min-content; /* попробовать заставить учитывать высоту */
+
 }
 
 
@@ -80,12 +83,19 @@
 
 .nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 20px;
   flex-wrap: wrap;
+}
+.nav-column {
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  max-height: 180px;
 }
 
+@media (width >= 1024px) {
+
+}
 .nav__link {
   max-width: 160px;
   font-family: "Wix Madefor Text", sans-serif;

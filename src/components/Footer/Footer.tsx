@@ -22,15 +22,19 @@ function Footer() {
 
           <div className='footer-nav-wrapper'>
             <nav className='nav'>
-              <Link href='./' className='nav__link'>Программа и тестирование</Link>
-              <Link href='./' className='nav__link'>Тарифы</Link>
-              <Link href='./' className='nav__link'>Команда</Link>
-              <Link href='./' className='nav__link'>О нас</Link>
-              <Link href='./' className='nav__link'>Блог</Link>
-              <Link href='./' className='nav__link'>Вакансии</Link>
-              <Link href='./' className='nav__link'>Запись</Link>
-              <Link href='./' className='nav__link'>Отзывы</Link>
-              <Link href='./' className='nav__link'>Вопросы и ответы</Link>
+              <div className='nav-column'>
+                <Link href='./' className='nav__link'>Программа и тестирование</Link>
+                <Link href='./' className='nav__link'>Тарифы</Link>
+                <Link href='./' className='nav__link'>Команда</Link>
+                <Link href='./' className='nav__link'>О нас</Link>
+                <Link href='./' className='nav__link'>Блог</Link>
+              </div>
+              <div className='nav-column'>
+                <Link href='./' className='nav__link'>Вакансии</Link>
+                <Link href='./' className='nav__link'>Запись</Link>
+                <Link href='./' className='nav__link'>Отзывы</Link>
+                <Link href='./' className='nav__link'>Вопросы и ответы</Link>
+              </div>
             </nav>
 
             <button className='test-button'>
