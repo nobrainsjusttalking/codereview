@@ -1,5 +1,5 @@
 .main {
-  padding-inline: 18%;
+  padding-inline: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;;
@@ -42,12 +42,14 @@
   line-height: 18px;
   letter-spacing: -0.5px;
   color: #414246;
+  margin-bottom: 30px;
 }
 
 .vacancies {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
+  margin-bottom: 15px;
 }
 
 
@@ -96,6 +98,7 @@
 
   .vacancies {
     gap: 14px;
+    grid-template-columns: 1fr 1fr;
   }
 }
 

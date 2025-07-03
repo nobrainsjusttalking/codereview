@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import './VacanciesCard.css';
 
 type Vacancy = {
@@ -33,33 +34,33 @@ export default function VacanciesCard({data}: VacancyData) {
   let { title, remote, internship, salary, image: companyLogo, company: {name: companyName}, location = '', date_publication} = data;
  
   let date = new Date(Date.parse(date_publication));
-  let dateFormatted = date.getDate().toString().padStart(2, '0') +     
-                      (date.getMonth() + 1).toString().padStart(2, '0') +
+  let dateFormatted = date.getDate().toString().padStart(2, '0') + '.' +    
+                      (date.getMonth() + 1).toString().padStart(2, '0') + '.' +
                       date.getFullYear();
   
   companyLogo = companyLogo || '/VacanciesCard/company-logo-placeholder.png';
 
+  const remoteText = (remote) ? 'удаленно' : 'в офис';
+  const remoteClass = (remote) ? 'vacancy-tag_remote' : 'vacancy-tag_non-remote';
+  const internshipText = (internship) ? 'стажировка' : '';
+
   return (
-    <div className='vacancy-card'>
+    <Link href='#' className='vacancy-card'>
       <div className='flex flex-col gap-[10px]'>
         <h2 className='vacancy-title'>{title}</h2>
 
-        <div className='flex flex-wrap'>
-          <span className={`vacancy-tag is-remote-${remote}`}>
-            {
-              remote
-            }
-          </span>
-          <span className='vacancy-tag vacancy-tag_internship'>{internship}</span>
+        <div className='flex flex-wrap gap-[12px]'>
+          <span className={`vacancy-tag ${remoteClass}`}>{remoteText}</span>
+          <span className='vacancy-tag vacancy-tag_internship'>{internshipText}</span>
           <span className='vacancy-tag vacancy-tag_salary'>{salary}</span>
         </div>
       </div>
 
-      <div className='flex justify-between items-end'>
-        <div className='flex'>
+      <div className='flex flex-col gap-[15px] lg:flex-row lg:justify-between lg:items-end'>
+        <div className='flex gap-[10px]'>
           <Image src={companyLogo} alt='' width={42} height={42} />
 
-          <div className='flex bg-red-300'>
+          <div className='flex flex-col'>
             <span className='vacancy-company-name'>{companyName}</span>
             <span className='vacancy-location'>{location}</span>
           </div>
@@ -68,6 +69,6 @@ export default function VacanciesCard({data}: VacancyData) {
           
         <span className='vacancy-date'>{dateFormatted}</span>
       </div>
-    </div>
+    </Link>
   );
 }
