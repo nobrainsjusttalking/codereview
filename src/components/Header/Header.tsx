@@ -1,7 +1,12 @@
+'use client';
+
+import { useCategory } from '@/context/CategoryContext';
 import Image from 'next/image';
 import './Header.css';
 
 function Header() {
+  const { activeCategory } = useCategory();
+
   return (
     <header className='header'>
       <div className='top-menu'>
@@ -15,7 +20,7 @@ function Header() {
         
         <button className='top-menu-btn'>
           <Image src='/Header/menu.svg' alt='' width={18} height={18} />
-          <span>Специализация</span>
+          <span>{activeCategory}</span>
           <Image className='arrow-down' src='/Header/arrow-down.svg' alt='' width={18} height={18} />
         </button>
 

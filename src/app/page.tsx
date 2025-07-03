@@ -2,14 +2,15 @@
 import CategoryButton from '@/components/CategoryButton/CategoryButton';
 import IndexCard from '@/components/IndexCard/IndexCard';
 import { indexCardData } from '@/components/IndexCard/IndexCardData';
+import { useCategory } from '@/context/CategoryContext';
 import Image from 'next/image';
-import { useState } from 'react';
 import './App.css';
 
 const categories = ['Python', 'Java', 'JavaScript', 'Data Science', 'QA', 'C#'];
 
 export default function Page() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const { activeCategory, setActiveCategory } = useCategory();
+
 
   return (
     <main className='main'>
@@ -22,14 +23,19 @@ export default function Page() {
       </div>
       
       <div className='categories'>
-        {
-          categories.map((category, idx) => {
-            if (idx == activeIndex) {
-              return <CategoryButton className='active' key={`${category}-${idx}`} >{category}</CategoryButton>;
-            }
-            return <CategoryButton onClick={() => {setActiveIndex(idx);}} key={`${category}-${idx}`}>{category}</CategoryButton>;
-          })
-        }
+        {categories.map((category, idx) => {
+          const isActive = category === activeCategory;
+
+          return (
+            <CategoryButton
+              key={`${category}-${idx}`}
+              className={isActive ? 'active' : ''}
+              onClick={() => setActiveCategory(category)}
+            >
+              {category}
+            </CategoryButton>
+          );
+        })}
       </div>
 
       <div className='index-cards'>

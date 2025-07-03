@@ -1,0 +1,81 @@
+.vacancy-card {
+  background-color: #F6F6F6;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+
+.vacancy-title {
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.vacancy-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: #232325;
+}
+
+.vacancy-tag::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+}
+
+.vacancy-tag_remote::before {
+  background-image: url("/VacanciesCard/world-icon.svg");
+}
+
+.vacancy-tag_non-remote::before {
+  background-image: url("/VacanciesCard/building-icon.svg");
+}
+
+.vacancy-tag_internship::before {
+  background-image: url("/VacanciesCard/briefcase-icon.svg");
+}
+
+.vacancy-tag_salary::before {
+  background-image: url("/VacanciesCard/moneybag-icon.svg");
+}
+
+
+
+.vacancy-company-name {
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  color: #232325;
+}
+
+.vacancy-location {
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: #636469;
+}
+
+.vacancy-date {
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: #86888E;
+}

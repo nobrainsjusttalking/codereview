@@ -1,44 +1,61 @@
 'use client';
+import VacanciesCard from '@/components/VacanciesCard/VacanciesCard';
 import { useEffect, useState } from 'react';
 import './page.css';
 
 export default function JobPage() {
-  const [vacanciesData, setVacanciesData] = useState<IVacancy[]>([]);
-
-  interface IVacancy {
+  type Vacancy = {
+    active: boolean;
+    title: string;
+    salary: string | null; // not sure
+    location: string | null; // not sure
+    speciality: string; // string or ""
+    internship: boolean;
+    remote: boolean;
+    url: string;
+    description: string;
+    source: string;
+    image: string; // string or ""
     id: number;
-    name: string;
-    username: string;
-    email: string;
-    phone: string;
-    website: string;
+    date_publication: string;
     company: {
       name: string;
-      catchPhrase: string;
-      bs: string;
-    };
-    address: {
-      street: string;
-      suite: string;
-      city: string;
-      zipcode: string;
-      get: {
-        lat: string;
-        lng: string;
-      }
-    }
+      description: string; // maybe always ""
+      id: number;
+    },
+    tags: string[] // not sure
   }
 
-  useEffect(() => {
-    fetch('http://jsonplaceholder.typicode.com/users').then((response): Promise<IVacancy[]> => response.json()).then((data) => setVacanciesData(data));
-  }, []);
+  type ApiResponse = {
+    items: Vacancy[];
+    limit: number;
+    skip: number;
+    total: number;
+  }
 
+  // const [apiResObj, setApiResObj] = useState<ApiResponse>();
 
   // useEffect(() => {
-  //   fetch('http://jobs.yourcodereview.com:8005/vacancies/').then((response) => response.json()).then((data) => setRealData(data));
+  //   fetch('/api/vacancies')
+  //     .then((response): Promise<ApiResponse> => response.json())
+  //     .then((data) => setApiResObj(data));
   // }, []);
-  // console.log(realData);
 
+
+  // const [vacanciesData, setVacanciesData] = useState<Vacancy[]>([]);
+
+  const [vacanciesData, setVacanciesData] = useState<Vacancy[]>([]);
+
+  useEffect(() => {
+    fetch('/api/vacancies')
+      .then((response): Promise<ApiResponse> => response.json())
+      .then((data) => setVacanciesData(data.items));
+  }, []);
+
+  console.log('vacanciesData');
+  console.log(vacanciesData);
+  console.log('vacanciesDataEnd');
+ 
 
   return (
     <main className='main'>
@@ -49,17 +66,21 @@ export default function JobPage() {
           На этой странице агрегируются junior-вакансии и стажировки из различных источников: 
           hh.ru, Habr Career, LinkedIn, Telegram-каналы и многие другие
         </p> */}
+      </div>
 
-        <div>
-          {vacanciesData.map((item, idx) => {
+
+      <div className='vacancies'> 
+        {
+          vacanciesData.map((item, idx) => {
             return (
-              <div key={idx}></div>
+              <VacanciesCard 
+                key={`${idx}`}
+                data={item}>
+
+              </VacanciesCard>
             );
-            // return (
-            //   <p key={idx}>{JSON.stringify(item)}</p>
-            // );
-          })}
-        </div>
+          })
+        }
       </div>
 
     </main>
