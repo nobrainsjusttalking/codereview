@@ -7,23 +7,23 @@ export default function JobPage() {
   type Vacancy = {
     active: boolean;
     title: string;
-    salary: string | null; // not sure
-    location: string | null; // not sure
-    speciality: string; // string or ""
+    salary: string | null;
+    location: string | null;
+    speciality: string;
     internship: boolean;
     remote: boolean;
     url: string;
     description: string;
     source: string;
-    image: string; // string or ""
+    image: string;
     id: number;
     date_publication: string;
     company: {
       name: string;
-      description: string; // maybe always ""
+      description: string;
       id: number;
     },
-    tags: string[] // not sure
+    tags: string[]
   }
 
   type ApiResponse = {
@@ -33,17 +33,6 @@ export default function JobPage() {
     total: number;
   }
 
-  // const [apiResObj, setApiResObj] = useState<ApiResponse>();
-
-  // useEffect(() => {
-  //   fetch('/api/vacancies')
-  //     .then((response): Promise<ApiResponse> => response.json())
-  //     .then((data) => setApiResObj(data));
-  // }, []);
-
-
-  // const [vacanciesData, setVacanciesData] = useState<Vacancy[]>([]);
-
   const [vacanciesData, setVacanciesData] = useState<Vacancy[]>([]);
 
   useEffect(() => {
@@ -51,21 +40,17 @@ export default function JobPage() {
       .then((response): Promise<ApiResponse> => response.json())
       .then((data) => setVacanciesData(data.items));
   }, []);
-
-  console.log('vacanciesData');
-  console.log(vacanciesData);
-  console.log('vacanciesDataEnd');
  
 
   return (
     <main className='main'>
       <div className='title-block'>
-        <h1 className='page-heading title-block-heading'>data fetching</h1>
+        <h1 className='page-heading title-block-heading'>Вакансии по Data Science (data fetching)</h1>
 
-        {/* <p className='title-block-text'>
+        <p className='title-block-text'>
           На этой странице агрегируются junior-вакансии и стажировки из различных источников: 
           hh.ru, Habr Career, LinkedIn, Telegram-каналы и многие другие
-        </p> */}
+        </p>
       </div>
 
 

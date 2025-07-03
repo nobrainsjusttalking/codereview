@@ -18,7 +18,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  z-index: -1000;
+  z-index: -10;
 }
 
 .title-block {
@@ -59,7 +59,7 @@
 .index-cards {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* mb 170px? */
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 150px);
   max-width: 380px;
   gap: 5px;
@@ -77,16 +77,6 @@
   background-position: 50% 50%, 50% 65%;
   background-size: 100% 50%, 100% 40%;
 
-  
-  
-
-  /* background-position: 50% 50%, 50% 75%; */
-  /* background-position: 50% 30%, 50% 55%; */
-
-
-  /* initial values (before the changes): 
-  background-position: 50% 50%, 50% 75%;
-  background-size: 100% auto; */
   opacity: 1;
   border-radius: inherit;
   animation: none;
@@ -170,12 +160,6 @@
 
 
 @media (width > 480px) {
-
-  /* .hide-mobile {
-    display: revert;
-  } */
-
-
   .index-cards {
     max-width: 550px;
     gap: 6px;
@@ -275,7 +259,6 @@
   }
 
   .index-cards {
-    /* max-width: 800px;  */
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 260px) 147px;
     max-width: 85%;

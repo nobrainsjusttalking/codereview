@@ -2,6 +2,7 @@
 
 import { useCategory } from '@/context/CategoryContext';
 import Image from 'next/image';
+import Link from 'next/link';
 import './Header.css';
 
 function Header() {
@@ -11,11 +12,11 @@ function Header() {
     <header className='header'>
       <div className='top-menu'>
         <div className='logo'>
-          <a href='/' className='logo__text'>
+          <Link href='/' className='logo__text'>
             <span className='hide-mobile'>
               <span className='logo__text--thin'>code</span>review
             </span>
-          </a>
+          </Link>
         </div>
         
         <button className='top-menu-btn'>

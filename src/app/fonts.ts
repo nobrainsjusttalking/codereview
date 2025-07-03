@@ -2,7 +2,7 @@ import { Wix_Madefor_Display, Wix_Madefor_Text } from 'next/font/google';
 
 export const displayFont = Wix_Madefor_Display({
   subsets: ['latin'],
-  variable: '--font-display', // кастомная CSS-переменная
+  variable: '--font-display',
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap'
 });

@@ -1,28 +1,139 @@
 .main {
-  padding-inline: 15px;
-  /* min-height: 308px; */
+  padding-inline: 18%;
   display: flex;
   flex-direction: column;
   align-items: center;;
 }
-
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-image: url('/main-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -10;
+}
 .title-block {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-block: 100px;
+  margin-top: 176px;
+  margin-bottom: 50px;
   align-items: flex-start;
-  align-items: center;
 }
 
 .title-block-heading {
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+  color: #232325;
+  text-align: left;
+}
+
+.title-block-text {
+  font-family: "Wix Madefor Display", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  color: #414246;
 }
 
 .vacancies {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 10px;
 }
 
+
+
+
+
+
+
+
+
+@media (width > 480px) {
+  .title-block {
+    gap: 12px;
+  }
+
+  .title-block-heading {
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+
+  .title-block-text {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .vacancies {
+    gap: 12px;
+  }
+}
+
+@media (width >= 768px ) {
+  .title-block {
+    gap: 15px;
+  }
+
+  .title-block-heading {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .title-block-text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .vacancies {
+    gap: 14px;
+  }
+}
+
+@media (width >= 1024px) {
+  .title-block {
+    gap: 18px;
+  }
+
+  .title-block-heading {
+    font-size: 43px;
+    line-height: 46px;
+  }
+
+  .vacancies {
+    gap: 15px;
+  }
+
+  .title-block-text {
+    font-size: 17px;
+    line-height: 21px;
+  }
+}
+
+@media (width >= 1280px) {
+  .title-block {
+    gap: 20px;
+  }
+  .title-block-heading {
+    font-size: 50px;
+    line-height: 52px;
+  }
+  
+  .vacancies {
+    gap: 16px;
+  }
+
+  .title-block-text {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

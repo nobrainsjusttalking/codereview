@@ -13,7 +13,7 @@ export default [
       'node_modules',
       '.next',
       'next.config.*',
-      '**/*.config.*'  // Игнорируем все конфигурационные файлы
+      '**/*.config.*'
     ]
   },
   {
@@ -49,7 +49,6 @@ export default [
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
 
-      // Аналоги eslint-config-next:
       'react/react-in-jsx-scope': 'off',
       'react/jsx-key': 'warn',
       'jsx-a11y/alt-text': 'warn',
@@ -62,7 +61,6 @@ export default [
         }
       ],
 
-      // Твои собственные правила
       'quotes': ['error', 'single'],
       'semi': ['error', 'always'],
       'comma-dangle': ['error', 'never'],

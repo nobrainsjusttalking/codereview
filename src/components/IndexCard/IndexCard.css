@@ -81,23 +81,10 @@
   background: linear-gradient(to right, #F4B8B866, #E3B3EA66, #C5C9F166);
 }
 
-
-
-@media (width > 480px) {
-}
-
-@media (width >= 768px ) {
-   
-}
-
 @media (width >= 1024px) {
   .index-card-text {
     font-size: 16px;
     line-height: 20px;
     max-width: 210px;
   }
-}
-
-@media (width >= 1280px) {
-
 }

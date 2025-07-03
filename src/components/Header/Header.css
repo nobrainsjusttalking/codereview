@@ -4,7 +4,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .top-menu {
@@ -33,10 +33,6 @@
 .hide-mobile {
   display: none;
 }
-
-/* .logo__text--lowered {
-  position: rel;
-} */
 
 .logo__text::before {
   content: "<";

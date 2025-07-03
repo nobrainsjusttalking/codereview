@@ -1,38 +1,26 @@
 import Image from 'next/image';
 import './VacanciesCard.css';
 
-// type VacancyType = {
-//   key?: string;
-//   title: string;
-//   remote: string;
-//   internship: boolean;
-//   salary: string;
-//   companyLogo: string;
-//   companyName: string;
-//   location: string;
-//   date: string;
-// }
-
 type Vacancy = {
     active: boolean;
     title: string;
-    salary: string | null; // not sure
-    location: string | null; // not sure
-    speciality: string; // string or ""
+    salary: string | null;
+    location: string | null;
+    speciality: string;
     internship: boolean;
     remote: boolean;
     url: string;
     description: string;
     source: string;
-    image: string; // string or ""
+    image: string;
     id: number;
     date_publication: string;
     company: {
       name: string;
-      description: string; // maybe always ""
+      description: string;
       id: number;
     },
-    tags: string[] // not sure
+    tags: string[]
   }
 
   type VacancyData = {
@@ -42,25 +30,15 @@ type Vacancy = {
 
 
 export default function VacanciesCard({data}: VacancyData) {
-  // const cardHeading = '';
-  // const isRemote = '';
-  // const isInternship = '';
-  // const salary = '';
-  // const companyLogo = '';
-  // const companyName = '';
-  // const location = '';
-  // const date = '';
-
-  let { title, remote, internship, salary, image: companyLogo, company: {name: companyName}, location = '', date_publication: date} = data;
+  let { title, remote, internship, salary, image: companyLogo, company: {name: companyName}, location = '', date_publication} = data;
+ 
+  let date = new Date(Date.parse(date_publication));
+  let dateFormatted = date.getDate().toString().padStart(2, '0') +     
+                      (date.getMonth() + 1).toString().padStart(2, '0') +
+                      date.getFullYear();
   
-  console.log(companyLogo);
   companyLogo = companyLogo || '/VacanciesCard/company-logo-placeholder.png';
 
-  console.log('REMOTE START');
-  console.log(remote);
-  console.log('REMOTE END');
-
-  console.log(companyLogo);
   return (
     <div className='vacancy-card'>
       <div className='flex flex-col gap-[10px]'>
@@ -77,18 +55,18 @@ export default function VacanciesCard({data}: VacancyData) {
         </div>
       </div>
 
-      <div className='flex'>
-        <div>
+      <div className='flex justify-between items-end'>
+        <div className='flex'>
           <Image src={companyLogo} alt='' width={42} height={42} />
 
-          <div>
+          <div className='flex bg-red-300'>
             <span className='vacancy-company-name'>{companyName}</span>
             <span className='vacancy-location'>{location}</span>
           </div>
 
         </div>
           
-        <span className='vacancy-date'>{date}</span>
+        <span className='vacancy-date'>{dateFormatted}</span>
       </div>
     </div>
   );
