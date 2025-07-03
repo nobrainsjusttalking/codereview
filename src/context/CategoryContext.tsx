@@ -1,9 +1,9 @@
 'use client';
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react';
 
 type CategoryContextType = {
   activeCategory: string;
-  setActiveCategory: (category: string) => void;
+  setActiveCategory: Dispatch<SetStateAction<string>>;
 };
 
 const CategoryContext = createContext<CategoryContextType | undefined>(undefined);

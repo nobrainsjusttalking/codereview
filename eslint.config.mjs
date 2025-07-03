@@ -4,19 +4,24 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
-import * as path from 'node:path';
 import tseslint from 'typescript-eslint';
 
 export default [
   {
-    ignores: ['dist', 'node_modules', '.next']
+    ignores: [
+      'dist',
+      'node_modules',
+      '.next',
+      'next.config.*',
+      '**/*.config.*'  // Игнорируем все конфигурационные файлы
+    ]
   },
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: path.resolve('./tsconfig.json'),
+        project: "./tsconfig.json",
         sourceType: 'module',
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true }
@@ -24,6 +29,11 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node
+      }
+    },
+    settings: {
+      react: {
+        version: 'detect'
       }
     },
     plugins: {
@@ -44,7 +54,13 @@ export default [
       'react/jsx-key': 'warn',
       'jsx-a11y/alt-text': 'warn',
       'jsx-a11y/anchor-is-valid': 'warn',
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'react-refresh/only-export-components': [
+        'warn', 
+        { 
+          allowConstantExport: true,
+          allowExportNames: ['metadata']
+        }
+      ],
 
       // Твои собственные правила
       'quotes': ['error', 'single'],

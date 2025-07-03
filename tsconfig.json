@@ -12,6 +12,8 @@
       "dom.iterable",
       "esnext"
     ],
+    "types": ["next"],
+    
     "allowJs": true,
     "incremental": true,
     "esModuleInterop": true,
