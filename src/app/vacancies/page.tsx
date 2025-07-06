@@ -1,3 +1,4 @@
+import vacanciesData from '@/app/api/vacancies/mockup.json';
 import VacanciesCard from '@/components/VacanciesCard/VacanciesCard';
 import styles from './page.module.css';
 
@@ -40,10 +41,7 @@ export default async function JobPage() {
   //     .then((response): Promise<ApiResponse> => response.json())
   //     .then((data) => setVacanciesData(data.items));
   // }, []);
-  const res = await fetch('http://localhost:3000/api/vacancies', {
-    next: { revalidate: 60 }
-  });
-  const data: ApiResponse = await res.json();
+  const data: ApiResponse = vacanciesData;
 
   return (
     <main className={styles.main}>
