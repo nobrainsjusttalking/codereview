@@ -54,8 +54,31 @@ export default function JobPage() {
           </p>
         </div>
 
-        <div className={styles.vacancies}> 
+        <div className={styles.vacancies}>
           {
+            vacanciesData.length === 0 ? (
+            // Покажи 6 скелетонов — столько, сколько примерно будет карточек
+              Array.from({ length: 6 }).map((_, i) => (
+                <div
+                  key={i}
+                  style={{
+                    minHeight: '189px', // поставь ту же высоту, что у VacanciesCard
+                    borderRadius: '10px',
+                    backgroundColor: '#f3f3f3',
+                    width: '100%',
+                    animation: 'pulse 1.2s ease-in-out infinite'
+                  }}
+                />
+              ))
+            ) : (
+              vacanciesData.map((item, idx) => (
+                <VacanciesCard key={`${idx}`} data={item} />
+              ))
+            )
+          }
+
+
+          {/* {
             vacanciesData.map((item, idx) => {
               return (
                 <VacanciesCard 
@@ -65,7 +88,7 @@ export default function JobPage() {
                 </VacanciesCard>
               );
             })
-          }
+          } */}
         </div>
       </div>
       {/* <Image src='/apiError.png' alt='api error screenshot' className='mb-[100px]' width={500} height={200} /> :P */}
