@@ -72,11 +72,10 @@ export default function JobPage() {
               ))
             ) : (
               vacanciesData.map((item, idx) => (
-                <VacanciesCard key={`${idx}`} data={item} />
+                <VacanciesCard key={`loltest ${idx}}`} data={item} />
               ))
             )
           }
-
 
           {/* {
             vacanciesData.map((item, idx) => {
