@@ -1,5 +1,5 @@
-import vacanciesData from '@/app/api/vacancies/mockup.json';
 import VacanciesCard from '@/components/VacanciesCard/VacanciesCard';
+import vacanciesData from '@/data/mockup.json';
 import styles from './page.module.css';
 
   type Vacancy = {

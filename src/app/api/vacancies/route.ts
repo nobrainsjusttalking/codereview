@@ -1,5 +1,6 @@
+import vacanciesMockupData from '@/data/mockup.json';
 import { NextResponse } from 'next/server';
-import vacanciesMockupData from './mockup.json';
+
 
 export async function GET() {
   const vacanciesData: {
