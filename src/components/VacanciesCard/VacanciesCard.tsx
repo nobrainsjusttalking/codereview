@@ -60,7 +60,7 @@ export default function VacanciesCard({data}: VacancyData) {
 
       <div className='flex flex-col gap-[15px] lg:flex-row lg:justify-between lg:items-end'>
         <div className='flex gap-[10px]'>
-          <Image src={companyLogo} alt='' width={42} height={42} />
+          <Image src={companyLogo} alt='' width={42} height={42} priority />
 
           <div className='flex flex-col'>
             <span className={styles['vacancy-company-name']}>{companyName}</span>

@@ -1,9 +1,6 @@
-'use client';
 import VacanciesCard from '@/components/VacanciesCard/VacanciesCard';
-import { useEffect, useState } from 'react';
 import styles from './page.module.css';
 
-export default function JobPage() {
   type Vacancy = {
     active: boolean;
     title: string;
@@ -33,14 +30,20 @@ export default function JobPage() {
     total: number;
   }
 
-  const [vacanciesData, setVacanciesData] = useState<Vacancy[]>([]);
 
-  useEffect(() => {
-    fetch('/api/vacancies')
-      .then((response): Promise<ApiResponse> => response.json())
-      .then((data) => setVacanciesData(data.items));
-  }, []);
- 
+
+export default async function JobPage() {
+  // const [vacanciesData, setVacanciesData] = useState<Vacancy[]>([]);
+
+  // useEffect(() => {
+  //   fetch('/api/vacancies')
+  //     .then((response): Promise<ApiResponse> => response.json())
+  //     .then((data) => setVacanciesData(data.items));
+  // }, []);
+  const res = await fetch('http://localhost:3000/api/vacancies', {
+    next: { revalidate: 60 }
+  });
+  const data: ApiResponse = await res.json();
 
   return (
     <main className={styles.main}>
@@ -49,26 +52,17 @@ export default function JobPage() {
           <h1 className={styles['title-block-heading']}>Вакансии по Data Science</h1>
 
           <p className={styles['title-block-text']}>
-          На этой странице агрегируются junior-вакансии и стажировки из различных источников: 
-          hh.ru, Habr Career, LinkedIn, Telegram-каналы и многие другие
+            На этой странице агрегируются junior-вакансии и стажировки из различных источников: 
+            hh.ru, Habr Career, LinkedIn, Telegram-каналы и многие другие
           </p>
         </div>
 
         <div className={styles.vacancies}> 
-          {
-            vacanciesData.map((item, idx) => {
-              return (
-                <VacanciesCard 
-                  key={`${idx}`}
-                  data={item}>
-
-                </VacanciesCard>
-              );
-            })
-          }
+          {data.items.map((item, idx) => (
+            <VacanciesCard key={idx} data={item} />
+          ))}
         </div>
       </div>
-      {/* <Image src='/apiError.png' alt='api error screenshot' className='mb-[100px]' width={500} height={200} /> :P */}
     </main>
   );
 }
