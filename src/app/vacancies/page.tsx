@@ -74,7 +74,7 @@ export default function JobPage() {
               vacanciesData.map((item, idx) => (
                 <VacanciesCard key={`loltest ${idx}}`} data={item} />
               ))
-            )
+            )//
           }
 
           {/* {
