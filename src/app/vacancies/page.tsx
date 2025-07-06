@@ -44,30 +44,30 @@ export default function JobPage() {
 
   return (
     <main className={styles.main}>
-      <div className={styles['title-block']}>
-        <h1 className={styles['title-block-heading']}>Вакансии по Data Science</h1>
+      <div className={styles['main-content']}>
+        <div className={styles['title-block']}>
+          <h1 className={styles['title-block-heading']}>Вакансии по Data Science</h1>
 
-        <p className={styles['title-block-text']}>
+          <p className={styles['title-block-text']}>
           На этой странице агрегируются junior-вакансии и стажировки из различных источников: 
           hh.ru, Habr Career, LinkedIn, Telegram-каналы и многие другие
-        </p>
+          </p>
+        </div>
+
+        <div className={styles.vacancies}> 
+          {
+            vacanciesData.map((item, idx) => {
+              return (
+                <VacanciesCard 
+                  key={`${idx}`}
+                  data={item}>
+
+                </VacanciesCard>
+              );
+            })
+          }
+        </div>
       </div>
-
-      <div className={styles.vacancies}> 
-        {
-          vacanciesData.map((item, idx) => {
-            return (
-              <VacanciesCard 
-                key={`${idx}`}
-                data={item}>
-
-              </VacanciesCard>
-            );
-          })
-        }
-      </div>
-
-
       {/* <Image src='/apiError.png' alt='api error screenshot' className='mb-[100px]' width={500} height={200} /> :P */}
     </main>
   );
