@@ -11,6 +11,16 @@
 }
 
 
+
+.hide-mobile {
+  clip-path: inset(50%);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+
 @media (width > 480px) {
   .page-heading {
     font-size: 32px;
@@ -19,9 +29,15 @@
   
 }
 
+
+
 @media (width >= 768px ) {
    .hide-mobile {
-    display: revert;
+    clip-path: none;
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
   }
   
 

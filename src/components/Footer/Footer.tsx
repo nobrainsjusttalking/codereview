@@ -37,7 +37,7 @@ function Footer() {
               </div>
             </nav>
 
-            <button className='test-button'>
+            <button className='test-button' type='button' name='salary-test-btn'>
               <p className='test-button__title'>На какую зарплату я могу претендовать?</p>
 
               <p className='test-button__text'>Пройти тест</p>

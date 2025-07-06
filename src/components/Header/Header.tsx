@@ -19,13 +19,13 @@ function Header() {
           </Link>
         </div>
         
-        <button className='top-menu-btn'>
+        <button className='top-menu-btn' name='header-category-btn' type='button'>
           <Image src='/Header/menu.svg' alt='' width={18} height={18} />
           <span>{activeCategory}</span>
           <Image className='arrow-down' src='/Header/arrow-down.svg' alt='' width={18} height={18} />
         </button>
 
-        <button className='top-menu-btn'>
+        <button className='top-menu-btn' name='login-btn' type='button'>
           <Image src='/Header/login.svg' alt='' width={18} height={18} />
           <span className='hide-mobile'>Войти</span>
         </button>

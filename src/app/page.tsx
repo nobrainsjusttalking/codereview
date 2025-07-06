@@ -23,12 +23,12 @@ export default function Page() {
       </div>
       
       <div className='categories'>
-        {categories.map((category, idx) => {
+        {categories.map((category) => {
           const isActive = category === activeCategory;
 
           return (
             <CategoryButton
-              key={`${category}-${idx}`}
+              key={`${category}`}
               className={isActive ? 'active' : ''}
               onClick={() => setActiveCategory(category)}
             >
