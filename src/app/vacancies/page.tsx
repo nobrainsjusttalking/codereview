@@ -59,7 +59,7 @@ export default async function JobPage() {
 
         <div className={styles.vacancies}> 
           {data.items.map((item, idx) => (
-            <VacanciesCard key={idx} data={item} />
+            <VacanciesCard key={`${idx}`} data={item} />
           ))}
         </div>
       </div>
