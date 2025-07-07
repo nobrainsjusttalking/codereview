@@ -61,7 +61,7 @@
 }
 
 
-/* 
+
 
 .index-card-in-dev::before {
   content: '';
@@ -92,7 +92,7 @@
   100% {
     transform: translateX(1px) translateY(5px);
   }
-} */
+}
 
 
 
