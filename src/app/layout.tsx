@@ -23,7 +23,7 @@ export default function RootLayout({
         <link
           rel='preload'
           as='image'
-          href='/main-bg.png'
+          href='/main-bg.webp'
           fetchPriority='high'
         />
       </Head>
