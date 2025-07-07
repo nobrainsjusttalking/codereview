@@ -50,15 +50,15 @@ function Footer() {
           <div className='footer-bottom-links'>
             <div className='footer-bottom-links-socials'>
               <Link href='./'>
-                <Image src='/Footer/telegram.svg' alt='' width={30} height={30} />
+                <Image src='/Footer/telegram.svg' alt='Telegram' width={30} height={30} />
               </Link>
 
               <Link href='./'>
-                <Image src='/Footer/youtube.svg' alt='' width={30} height={30} />
+                <Image src='/Footer/youtube.svg' alt='YouTube' width={30} height={30} />
               </Link>
 
               <Link href='./'>
-                <Image src='/Footer/linkedin.svg' alt='' width={30} height={30} />
+                <Image src='/Footer/linkedin.svg' alt='LinkedIn' width={30} height={30} />
               </Link>
             </div>
 
