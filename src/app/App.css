@@ -14,7 +14,7 @@
   left: 0;
   width: 100%;
   height: 50%;
-  background-image: url('/main-bg.png');
+  background-image: url('/main-bg.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -61,7 +61,38 @@
 }
 
 
+/* 
 
+.index-card-in-dev::before {
+  content: '';
+  background-image: url('/IndexCard/in_dev_purple.svg'), url('/IndexCard/in_dev_black.svg');
+  background-repeat: no-repeat;
+
+  background-position: 50% 50%, 50% 65%;
+  background-size: 100% 50%, 100% 40%;
+
+  opacity: 1;
+  border-radius: inherit;
+  animation: none;
+  transition: top .2s ease-in;
+}
+.index-card-in-dev .index-card-text {
+  display: none;
+}
+.index-card-in-dev:hover::before {
+  top: 5px;
+  background-position: 50% 50%, 50% 65%;
+  animation: shaking 1s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes shaking {
+  0% {
+    transform: translateX(-1px) translateY(0px);
+  }
+  100% {
+    transform: translateX(1px) translateY(5px);
+  }
+} */
 
 
 
@@ -80,7 +111,7 @@
   max-width: 100%;
 }
 .index-card-big[href='#']::before {
-  background-image: url('/IndexCard/index-card-big-bg.png');
+  background-image: url('/IndexCard/index-card-big-bg.webp');
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -102,7 +133,7 @@
 }
 
 .index-card-accented::before {
-  background-image: url('/IndexCard/bg-stars.png');
+  background-image: url('/IndexCard/bg-stars.webp');
   background-size: cover;
   background-position: center;
   opacity: 0;
