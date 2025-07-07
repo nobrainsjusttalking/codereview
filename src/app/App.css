@@ -6,7 +6,7 @@
   padding-inline: 15px;
   padding-block: 50px;
 }
-/* 
+
 .main::before {
   content: '';
   position: absolute;
@@ -19,7 +19,7 @@
   background-position: center;
   background-size: cover;
   z-index: -10;
-} */
+}
 
 .main-title-block {
   display: flex;
@@ -29,6 +29,14 @@
   margin-top: 90px;
   margin-bottom: 30px;
   text-align: center;
+}
+.main-title-block-text {
+  font-family: "Wix Madefor Display", sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  color: #414246;
+  max-width: 80%;
 }
 
 

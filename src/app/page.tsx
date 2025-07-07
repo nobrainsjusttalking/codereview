@@ -17,6 +17,9 @@ export default function Page() {
       <div className='main-title-block'>
         <Image src='/assistant-real.png' alt='' width={96.1} height={99} priority />
 
+        <h1 className='page-heading'>Твой Ассистент <br />по поиску работы</h1>
+
+        <p className='main-title-block-text'>Я собрала для тебя все в одном месте, чтобы ты смог быстро найти работу</p>
       </div>
       
       <div className='categories'>
