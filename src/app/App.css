@@ -6,7 +6,7 @@
   padding-inline: 15px;
   padding-block: 50px;
 }
-
+/* 
 .main::before {
   content: '';
   position: absolute;
@@ -19,7 +19,7 @@
   background-position: center;
   background-size: cover;
   z-index: -10;
-}
+} */
 
 .main-title-block {
   display: flex;
@@ -29,14 +29,6 @@
   margin-top: 90px;
   margin-bottom: 30px;
   text-align: center;
-}
-.main-title-block-text {
-  font-family: "Wix Madefor Display", sans-serif;
-  font-size: 18px;
-  line-height: 22px;
-  letter-spacing: -0.5px;
-  color: #414246;
-  max-width: 80%;
 }
 
 
@@ -63,37 +55,7 @@
 
 
 
-/* In Development */
-.index-card-in-dev::before {
-  content: '';
-  background-image: url('/IndexCard/in_dev_purple.svg'), url('/IndexCard/in_dev_black.svg');
-  background-repeat: no-repeat;
 
-  background-position: 50% 50%, 50% 65%;
-  background-size: 100% 50%, 100% 40%;
-
-  opacity: 1;
-  border-radius: inherit;
-  animation: none;
-  transition: top .2s ease-in;
-}
-.index-card-in-dev .index-card-text {
-  display: none;
-}
-.index-card-in-dev:hover::before {
-  top: 5px;
-  background-position: 50% 50%, 50% 65%;
-  animation: shaking 1s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes shaking {
-  0% {
-    transform: translateX(-1px) translateY(0px);
-  }
-  100% {
-    transform: translateX(1px) translateY(5px);
-  }
-}
 
 
 
@@ -187,9 +149,6 @@
 }
 
 @media (width >= 768px ) {
-   .hide-mobile {
-    display: revert;
-  }
   .main-title-block-text {
     font-size: 20px;
     line-height: 24px;

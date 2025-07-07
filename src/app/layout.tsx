@@ -2,6 +2,7 @@ import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import { CategoryProvider } from '@/context/CategoryContext';
 import type { Metadata } from 'next';
+import Head from 'next/head';
 import React from 'react';
 import { displayFont, textFont } from './fonts';
 import './globals.css';
@@ -18,6 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' className={`${displayFont.variable} ${textFont.variable}`}>
+      <Head>
+        <link
+          rel='preload'
+          as='image'
+          href='/main-bg.png'
+          fetchPriority='high'
+        />
+      </Head>
       <body className='font-display text-base'>
         <CategoryProvider>
           <Header />
