@@ -11,7 +11,6 @@ const categories = ['Python', 'Java', 'JavaScript', 'Data Science', 'QA', 'C#'];
 export default function Page() {
   const { activeCategory, setActiveCategory } = useCategory();
 
-
   return (
     <main className='main'>
       <div className='main-title-block'>

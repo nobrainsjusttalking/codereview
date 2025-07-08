@@ -1,10 +1,11 @@
 import js from '@eslint/js';
+import tseslintPlugin from '@typescript-eslint/eslint-plugin';
+import tseslintParser from '@typescript-eslint/parser';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
 
 export default [
   {
@@ -19,16 +20,10 @@ export default [
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
-      parser: tseslint.parser,
-      parserOptions: {
-        project: "./tsconfig.json",
-        sourceType: 'module',
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true }
-      },
+      parser: tseslintParser,
       globals: {
         ...globals.browser,
-        ...globals.node
+        ...globals.node,
       }
     },
     settings: {
@@ -37,7 +32,7 @@ export default [
       }
     },
     plugins: {
-      '@typescript-eslint': tseslint.plugin,
+      '@typescript-eslint': tseslintPlugin,
       'react': react,
       'react-hooks': reactHooks,
       'jsx-a11y': jsxA11y,
@@ -45,7 +40,7 @@ export default [
     },
     rules: {
       ...js.configs.recommended.rules,
-      ...tseslint.configs.recommended.rules,
+      ...tseslintPlugin.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
 
