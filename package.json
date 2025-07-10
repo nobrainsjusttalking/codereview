@@ -1,5 +1,5 @@
 {
-  "name": "codereview-next",
+  "name": "codereview",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,7 +18,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@eslint/js": "^9.29.0",
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/postcss": "^4.1.11",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -37,7 +37,7 @@
     "globals": "^16.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^30.0.3",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.1.11",
     "ts-jest": "^29.4.0",
     "typescript": "^5"
   }

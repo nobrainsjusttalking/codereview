@@ -1,49 +1,16 @@
-.ticker {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  width: 100%;
+.bg-ticker {
   background-image: linear-gradient(to right, #F4B8B8, #EAD6B5, #E3EAB3, #C5F1D0);
-  user-select: none;
 }
 
-.ticker-track {
-  display: flex;
+.ticker-scroll-animation {
   animation: ticker-scroll 130s linear infinite;
 }
-.ticker-track:hover {
+.ticker-scroll-animation:hover {
   animation-play-state: paused;
-}
-
-.ticker-content {
-  display: flex;
-  padding-block: 12px;
 }
 
 @keyframes ticker-scroll {
   100% {
     transform: translateX(-50%);
   }
-}
-
-
-.ticker-text {
-  white-space: nowrap;
-  flex-shrink: 0;
-  font-family: "Wix Madefor Text", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16px;
-  letter-spacing: -0.5px;
-  color: #232325; 
-}
-
-.ticker-text::before {
-  content: '';
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  vertical-align: bottom;
-  background-image: url('../../../public/Ticker/duck.svg');
-  margin: 0 8px;
 }

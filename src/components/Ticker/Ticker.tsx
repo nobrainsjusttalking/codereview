@@ -9,12 +9,15 @@ function Ticker() {
   const copies = 36;
 
   return (
-    <div className='ticker'>
-      <div className='ticker-track'>
+    <div className='flex items-center overflow-hidden w-full select-none bg-ticker'>
+      <div className='ticker-scroll-animation flex'>
         {Array(copies).fill(null).map((_, copyIndex) => (
-          <div className='ticker-content' key={copyIndex} aria-hidden={copyIndex !== 0}>
+          <div className='flex py-[12px]' key={copyIndex} aria-hidden={copyIndex !== 0}>
             {messages.map((text, idx) => (
-              <span key={`${copyIndex}-${idx}`} className='ticker-text'>{text}</span>
+              <span key={`${copyIndex}-${idx}`} 
+                className='whitespace-nowrap shrink-0 text-[14px]/[16px] font-medium tracking-[-0.5px] text-[#232325] font-wix-text before-text-icon'>
+                {text}
+              </span>
             ))}
           </div>
         ))}
