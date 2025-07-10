@@ -1,6 +1,5 @@
-'use client';
 import VacanciesCard from '@/components/VacanciesCard/VacanciesCard';
-import { useEffect, useState } from 'react';
+import { headers } from 'next/headers';
 import styles from './page.module.css';
 
   type Vacancy = {
@@ -36,18 +35,25 @@ import styles from './page.module.css';
     total: number;
   }
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+async function getVacancies(): Promise<Vacancy[]> {
+  const headersList = await headers();
+  const host = headersList.get('host');
+  const protocol = host?.includes('localhost') ? 'http' : 'https';
+
+  const response = await fetch(`${protocol}://${host}/api/vacancies`, {
+    cache: 'no-store'
+  });
+  const data: ApiResponse = await response.json();
+  return data.items;
+}
 
 
-export default function JobPage() {
-  const [vacanciesData, setVacanciesData] = useState<Vacancy[]>([]);
+export default async function JobPage() {
+  const vacanciesData = await getVacancies();
   
-
-  useEffect(() => {
-    fetch('/api/vacancies')
-      .then((response): Promise<ApiResponse> => response.json())
-      .then((data) => setVacanciesData(data.items));
-  }, []);
-
   return (
     <main className={styles.main}>
       <div className={styles['main-content']}>
